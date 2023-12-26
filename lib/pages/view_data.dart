@@ -140,31 +140,33 @@ class _ViewDataState extends State<ViewData> {
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+          backgroundColor: Colors.indigo.shade400,
+          onPressed: () {
+            setState(() {
+              getdata();
+            });
+          },
+          child: const Icon(
+            Icons.refresh_rounded,
+            size: 30,
+            color: Colors.white,
+          )),
       bottomNavigationBar: BottomAppBar(
         color: Colors.grey.shade200,
-        height: 80,
+        height: 60,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(icon: const Icon(Icons.home), onPressed: () {}),
-            FloatingActionButton(
-                backgroundColor: Colors.indigo.shade400,
-                onPressed: () {
-                  setState(() {
-                    getdata();
-                  });
-                },
-                child: const Icon(
-                  Icons.refresh_rounded,
-                  size: 30,
-                  color: Colors.white,
-                )),
             IconButton(
                 icon: const Icon(Icons.auto_graph_rounded), onPressed: () {}),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
